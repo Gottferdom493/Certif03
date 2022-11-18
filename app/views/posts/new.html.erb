@@ -1,0 +1,15 @@
+			<%= form_for @post do |f| %>
+
+				<%= f.label :titre, "Entre un titre" %>
+				<%= f.text_field :titre, placeholder: "Ajout le titre" %>
+
+				<%= f.label :sujet, "Entre un sujet" %>
+				<%=f.text_field :sujet, placeholder: "Ajout le sujet" %>
+
+				<%= f.label :url, "Entre un url" %>
+				<%=f.text_field :url, placeholder: "Entre un url" %>
+
+				<%= f.submit :Création %>
+
+			<% end %>
+<%= link_to'Retour', posts_path %>

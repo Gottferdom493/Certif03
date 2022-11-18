@@ -1,1 +1,12 @@
 <h1>Bonjour</h1>
+
+<% @posts.each do |post| %>
+  <h2><%= post.titre %></h2>
+  <p><%= post.sujet %></p>
+  <p><%= post.url %></p>
+<% end %>
+
+
+
+
+<%= link_to'Création', new_post_path %>
