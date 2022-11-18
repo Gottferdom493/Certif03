@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-
+  skip_before_action :authenticate_user!
+  
   def index
     @posts = Post.all
   end
@@ -22,6 +23,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:titre, :sujet, :url)
   end
-
 
 end
