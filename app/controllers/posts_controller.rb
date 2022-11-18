@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   skip_before_action :authenticate_user!
-  
+
   def index
     @posts = Post.all
   end
@@ -16,6 +16,12 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 
   private
