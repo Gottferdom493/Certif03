@@ -1,0 +1,10 @@
+<h1> <%= @post.titre %> </h1>
+
+
+<% @comments.each do |comment| %>
+  <p><%= comment.content %></p>
+<% end %>
+
+
+<%= link_to'Création', new_post_comment_path %>
+<%= link_to 'Back', posts_path %>

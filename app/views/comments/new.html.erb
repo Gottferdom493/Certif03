@@ -1,0 +1,11 @@
+
+<%= form_for [ @post, @comment ] do |f| %>
+
+  <%= f.label :content, "Entre un content" %>
+  <%= f.text_field :content, placeholder: "Ajout le content" %>
+
+  <%= f.submit :Création %>
+
+<% end %>
+
+<%= link_to'Retour', post_comments_path %>
