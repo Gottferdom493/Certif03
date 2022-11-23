@@ -3,6 +3,9 @@
 
 <% @comments.each do |comment| %>
   <p><%= comment.content %></p>
+      <% if comment.user == current_user %>
+        <%= link_to "Supprimer", post_comments_path(), method: :delete, data: {confirm: "tu es sure?"} %>
+      <% end %>
 <% end %>
 
 

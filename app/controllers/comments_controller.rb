@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @post = Post.find(params[:post_id])
     @comment.post = @post
+    @comment.user = current_user
     if @comment.save
       redirect_to post_comments_path(), notice: "Super, ton avis est rajouté!"
     else
