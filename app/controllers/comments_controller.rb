@@ -14,9 +14,9 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @post = Post.find(params[:post_id])
+    @comment.post = @post
     if @comment.save
-      railse
-      redirect_to post_path(@post), notice: "Comment has been added"
+      redirect_to post_comments_path(), notice: "Super, ton avis est rajouté!"
     else
       render :new
     end
